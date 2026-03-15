@@ -1,4 +1,2 @@
-def sort_numbers(values: list[int]) -> list[int]:
-    """Optimized sorting using Python's built-in Timsort."""
-    values.sort()
-    return values
+def sort_numbers(data):
+    return sorted(data)
