@@ -2,9 +2,9 @@ def process_transactions(users, transactions):
     n_users = len(users)
     user_totals = [0.0] * n_users
     
+    # Process all transactions with direct indexing
     for t in transactions:
-        uid = t['user_id']
-        # Use augmented assignment to avoid double lookup
-        user_totals[uid] += t['amount']
+        user_totals[t['user_id']] += t['amount']
     
-    return [{'name': u['name'], 'total': user_totals[u['id']]} for u in users]
+    # Pre-build result list more efficiently
+    return [{'name': users[i]['name'], 'total': user_totals[users[i]['id']]} for i in range(n_users)]
