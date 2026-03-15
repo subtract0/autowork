@@ -1,2 +1,4 @@
 def sort_numbers(data):
-    return sorted(data)
+    result = data.copy()
+    result.sort()
+    return result
